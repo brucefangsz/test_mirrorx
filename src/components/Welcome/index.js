@@ -6,5 +6,8 @@ import fsztest from "./wecomemodel.jsx";
 import Welcome from "./welcomecontainal.jsx";
 console.log(fsztest);
 mirror.model(fsztest);
-
+mirror.hook((action, getState) => {
+  console.log(112)
+  console.log(action);console.log(getState())
+});
 export default connect(state => state.fsztest)(Welcome);

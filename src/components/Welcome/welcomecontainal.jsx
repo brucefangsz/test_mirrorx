@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { actions } from "mirrorx";
+import MyTest from "../MyTest/test";
 const Welcome = state => {
   return (
     <div>
@@ -11,11 +12,12 @@ const Welcome = state => {
       <button onClick={actions.fsztest.getUserList}>获取线上数据</button>
       {state.list.map(item => {
         return [
-          <div>{item.username}</div>,
-          <div>{item.age}</div>, 
-          <div>{item.sex}</div>
+          <div>{"姓名：" + item.username}</div>,
+          <div>{"年龄：" + item.age}</div>,
+          <div>{"性别：" + item.sex}</div>
         ];
       })}
+      <MyTest />
     </div>
   );
 };

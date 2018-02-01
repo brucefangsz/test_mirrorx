@@ -1,5 +1,6 @@
 import { actions } from "mirrorx";
 import axios from "axios";
+import * as api from "./server.jsx";
 export default {
   name: "fsztest",
   initialState: {
@@ -20,9 +21,7 @@ export default {
       actions.fsztest.save({ user: { name: "房宏炎", age: 24, sex: 0 } });
     },
     async getUserList() {
-      let { data: { data: list } } = await axios.get(
-        "https://mock.yonyoucloud.com/mock/56/nc/api/user"
-      );
+      let { data: { data: list } } = await api.getUser();
       actions.fsztest.save({ list });
       console.log("获取线上数据");
       console.log(list);
