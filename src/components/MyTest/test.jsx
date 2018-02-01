@@ -7,13 +7,20 @@ class MyTest extends Component {
   }
 
   componentWillMount() {
-    console.log('子组件')
+    console.log("子组件");
     console.log(this.props);
   }
 
   componentDidMount() {}
   render() {
-    return <div>子组件获取值tests</div>;
+    let { user } = this.props;
+    console.log(user);
+    return (
+      <div>
+        子组件获取值tests
+        <div > {user.name} </div>
+      </div>
+    );
   }
 }
 
